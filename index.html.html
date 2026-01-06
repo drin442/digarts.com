@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DigArts Studio - Huduma za Upigaji Picha, Video Production, Hosting Interviews na Kurekodi Nyimbo. Ubora wa Kimataifa.">
+    <meta name="keywords" content="digarts studio, picha, video, audio, interviews, tanzania">
+    <meta name="author" content="DigArts Studio">
+    <title>DigArts Studio - Picha, Video, Audio & Interviews</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon placeholder - weka link ya favicon yako -->
+    <link rel="icon" href="https://via.placeholder.com/32x32?text=D" type="image/png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: #000 center/cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .logo-img {
+            width: 400px;
+            max-width: 90%;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            color: #ab47bc;
+            margin: 10px 0;
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: transparent;
+            border: 2px solid #ab47bc;
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ab47bc;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(0,0,0,0.8);
+        }
+
+        .nav-logo {
+            font-size: 1.8em;
+            color: #ab47bc;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ab47bc;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            margin-right: auto;
+        }
+
+        .lang-btn {
+            background: linear-gradient(to bottom, #6a1b9a, #ab47bc);
+            border: none;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 1em;
+            box-shadow: 0 2px 10px rgba(171, 71, 188, 0.5);
+            transition: 0.3s;
+        }
+
+        .lang-btn:hover {
+            box-shadow: 0 4px 15px rgba(171, 71, 188, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .lang-btn.active {
+            background: linear-gradient(to bottom, #ab47bc, #6a1b9a);
+            box-shadow: 0 0 15px rgba(171, 71, 188, 0.8);
+        }
+
+        /* Client Login Button */
+        .btn-login {
+            background: linear-gradient(to bottom, #6a1b9a, #ab47bc);
+            padding: 15px 30px;
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(171, 71, 188, 0.5);
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            box-shadow: 0 6px 20px rgba(171, 71, 188, 0.8);
+        }
+
+        /* Services */
+        .services-section {
+            padding: 120px 50px 80px;
+            text-align: center;
+        }
+
+        .services-section h2 {
+            font-size: 3em;
+            margin-bottom: 60px;
+            color: #ab47bc;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .service-item {
+            background: #111;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(171, 71, 188, 0.2);
+            transition: transform 0.4s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-15px);
+        }
+
+        .service-item img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .service-info {
+            padding: 25px;
+        }
+
+        .service-info h3 {
+            color: #ab47bc;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        /* Price Button */
+        .price-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(to top, #007bff 0%, transparent 50%), linear-gradient(to bottom, #ff0000, #880000);
+            border: 2px solid #ff0000;
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.6), 0 0 15px rgba(0, 123, 255, 0.5);
+            transition: 0.3s;
+        }
+
+        .price-btn:hover {
+            box-shadow: 0 0 35px rgba(255, 0, 0, 0.9), 0 0 25px rgba(0, 123, 255, 0.8);
+            transform: scale(1.08);
+        }
+
+        /* Contact */
+        .contact {
+            padding: 100px 50px;
+            background: #111;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: #ab47bc;
+            margin-bottom: 30px;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+
+        .whatsapp-btn img {
+            width: 35px;
+        }
+
+        footer {
+            padding: 40px;
+            text-align: center;
+            background: #000;
+        }
+
+        /* Price Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: linear-gradient(to bottom, #111, #000);
+            padding: 40px;
+            border-radius: 25px;
+            max-width: 700px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(171, 71, 188, 0.8);
+            border: 3px solid #ab47bc;
+            animation: modalFadeIn 0.5s;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #ff0000;
+        }
+
+        #priceList .price-item {
+            background: linear-gradient(to right, #222, #333);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 15px;
+            font-size: 1.3em;
+            border-left: 6px solid #ab47bc;
+            box-shadow: 0 5px 15px rgba(171, 71, 188, 0.4);
+            transition: 0.3s;
+        }
+
+        #priceList .price-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(171, 71, 188, 0.6);
+        }
+
+        #priceList .price-item::before {
+            content: "💎 ";
+            font-size: 1.4em;
+        }
+
+        /* Login Modal - Purple Theme Kama Screenshot Yako */
+        #loginModal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-modal-content {
+            background: linear-gradient(to bottom, #6a1b9a, #ab47bc);
+            padding: 40px;
+            border-radius: 25px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(171, 71, 188, 0.8);
+            animation: modalFadeIn 0.5s;
+        }
+
+        .login-modal-content h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(255,255,255,0.1);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1.1em;
+        }
+
+        .login-form input::placeholder {
+            color: #ddd;
+        }
+
+        .login-form .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+            color: #ddd;
+            font-size: 0.9em;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 15px;
+            background: #fff;
+            color: #6a1b9a;
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-form button:hover {
+            background: #eee;
+        }
+
+        .login-form a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .login-form a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsiveness - Inafaa Mobile */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content, .login-modal-content {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">DigArts Studio</div>
+        <div class="nav-links">
+            <div class="language-switcher">
+                <button onclick="changeLanguage('sw')" class="lang-btn active" id="lang-sw">SW</button>
+                <button onclick="changeLanguage('en')" class="lang-btn" id="lang-en">EN</button>
+            </div>
+            
+            <a href="#home" class="nav-link">Nyumbani</a>
+            <a href="#services" class="nav-link">Huduma</a>
+            <a href="#contact" class="nav-link">Mawasiliano</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <img src="https://i.ibb.co/DDPxPxc2/image.jpg=DigArts+Studio+Logo" alt="DigArts Studio Logo" class="logo-img">
+        <h1>DIGARTS STUDIO</h1>
+        <p id="hero-text">Tunatoa huduma za kitaalamu za upigaji picha, video production, kurekodi na mixing nyimbo, pamoja na hosting interviews. Vifaa vya kisasa, wataalamu stadi na matokeo ya ubora wa kimataifa.</p>
+        <a href="#services" class="btn" id="view-services-btn">Angalia Huduma Zetu</a>
+    </section>
+
+    <section class="services-section" id="services">
+        <h2 id="services-title">Huduma Zetu</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="https://i.ibb.co/7dBS2j28/111.avif=Photography+1" alt="Picha">
+                <img src="https://i.ibb.co/0y1Lr0n7/1111.webp=Photography+2" alt="Picha">
+                <div class="service-info">
+                    <h3 data-sw="Upigaji Picha" data-en="Photography">Upigaji Picha</h3>
+                    <p>Picha za harusi, fashion, biashara, portraits na zaidi kwa ubora wa juu.</p>
+                    <a href="#" class="price-btn" data-service="photography">Angalia Bei</a>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="https://i.ibb.co/qY6Vz7ND/Video-shoot.jpg=Video" alt="Video">
+                <img src="https://i.ibb.co/MxhTVXvW/video-shoot-wedng.webp" alt="Video">
+                <div class="service-info">
+                    <h3 data-sw="Video Production" data-en="Video Production">Video Production</h3>
+                    <p>Video za muziki, matangazo, wedding na event coverage.</p>
+                    <a href="#" class="price-btn" data-service="video">Angalia Bei</a>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="https://i.ibb.co/0pwQ6FNk/Hosting-vd-shoot-2.jpg=Interviews" alt="Interviews">
+                <img src="https://i.ibb.co/KxgBt4dm/Hosting-shoot.jpg=Interviews" alt="Interviews">
+                <div class="service-info">
+                    <h3 data-sw="Hosting Interviews" data-en="Interview Hosting">Hosting Interviews</h3>
+                    <p>Podcasts, YouTube content na mahojiano ya kitaalamu.</p>
+                    <a href="#" class="price-btn" data-service="interviews">Angalia Bei</a>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="https://i.ibb.co/CKQr1HdM/222.jpg=Audio+1" alt="Audio">
+                <img src="https://i.ibb.co/BHmyk8qn/22.jpg=Audio+2" alt="Audio">
+                <div class="service-info">
+                    <h3 data-sw="Kurekodi & Mixing Nyimbo" data-en="Music Recording & Mixing">Kurekodi & Mixing Nyimbo</h3>
+                    <p>Recording, mixing na mastering ya audio kwa ubora wa studio.</p>
+                    <a href="#" class="price-btn" data-service="audio">Angalia Bei</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 id="contact-title">Wasiliana Nasi</h2>
+        <p>Simu: +255 749 929 798<br>Email: info@digartsstudio.co.tz</p>
+        <a href="https://wa.me/255749929798" class="btn" target="_blank">Tuma WhatsApp</a>
+        <br>
+        <a href="#" class="btn-login" onclick="showLoginModal()">Client Login</a>
+    </section>
+
+    <a href="https://wa.me/255749929798" class="whatsapp-btn" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <!-- Price Modal -->
+    <div id="priceModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modal-title">Bei za Huduma</h2>
+            <div id="priceList"></div>
+        </div>
+    </div>
+
+    <!-- Login Modal - Purple Sign-In Form -->
+    <div id="loginModal" class="modal">
+        <div class="login-modal-content">
+            <span class="close-btn" onclick="hideLoginModal()">&times;</span>
+            <h2>Welcome</h2>
+            <p>Sign in to your account</p>
+            <form class="login-form" onsubmit="login(); return false;">
+                <input type="email" placeholder="Email address" required>
+                <input type="password" placeholder="Password" required>
+                <div class="options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#">Forgot your password?</a>
+                </div>
+                <button type="submit">Sign In</button>
+            </form>
+            <p>Don't have an account? <a href="#">Sign Up</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 DigArts Studio. Haki Zote Zimehifadhiwa.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+
+
+    <script>
+        // Bei Data
+        const prices = {
+            photography: [
+                "Picha za Harusi - TZS 800,000 - 1,500,000",
+                "Picha za Graduation - TZS 500,000",
+                "Picha za Biashara/Product - TZS 300,000 - 600,000",
+                "Fashion/Portrait Session - TZS 400,000",
+                "Family Photoshoot - TZS 350,000"
+            ],
+            video: [
+                "Video ya Nyimbo (Music Video) - TZS 1,000,000 - 2,500,000",
+                "Kushuti Tukio la Harusi (Full Wedding) - TZS 700,000 - 1,200,000",
+                "Kushuti Graduation - TZS 500,000 - 800,000",
+                "Matangazo ya Biashara - TZS 600,000+",
+                "Event Coverage (1 Day) - TZS 500,000"
+            ],
+            interviews: [
+                "Single Interview Hosting - TZS 300,000",
+                "Podcast Episode - TZS 250,000",
+                "YouTube Interview Session - TZS 400,000",
+                "Full Series Package - Bei Maalumu"
+            ],
+            audio: [
+                "Kurekodi Nyimbo (1 Track + Mix) - TZS 400,000",
+                "Mixing & Mastering - TZS 150,000 - 250,000",
+                "Full EP (5 Tracks) - TZS 1,800,000",
+                "Voice Over Recording - TZS 100,000"
+            ]
+        };
+
+        // Fungua Price Modal
+        document.querySelectorAll('.price-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const service = this.getAttribute('data-service');
+                const list = document.getElementById('priceList');
+                list.innerHTML = '';
+                prices[service].forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'price-item';
+                    div.textContent = item;
+                    list.appendChild(div);
+                });
+                document.getElementById('priceModal').style.display = 'flex';
+            });
+        });
+
+        // Funga Price Modal
+        document.querySelector('.close-btn').addEventListener('click', () => {
+            document.getElementById('priceModal').style.display = 'none';
+        });
+        window.addEventListener('click', (e) => {
+            if (e.target === document.getElementById('priceModal')) {
+                document.getElementById('priceModal').style.display = 'none';
+            }
+        });
+
+        // Language Switch
+        function changeLanguage(lang) {
+            document.getElementById('lang-sw').classList.toggle('active', lang === 'sw');
+            document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+
+            const texts = {
+                sw: {
+                    hero: "Tunatoa huduma za kitaalamu za upigaji picha, video production, kurekodi na mixing nyimbo, pamoja na hosting interviews. Vifaa vya kisasa, wataalamu stadi na matokeo ya ubora wa kimataifa.",
+                    btn: "Angalia Huduma Zetu",
+                    services: "Huduma Zetu",
+                    contact: "Wasiliana Nasi",
+                    modal: "Bei za Huduma",
+                    nav: ["Nyumbani", "Huduma", "Mawasiliano"],
+                    titles: ["Upigaji Picha", "Video Production", "Hosting Interviews", "Kurekodi & Mixing Nyimbo"]
+                },
+                en: {
+                    hero: "Professional services in photography, video production, music recording & mixing, and interview hosting. Modern equipment, skilled experts, and international quality results.",
+                    btn: "View Our Services",
+                    services: "Our Services",
+                    contact: "Contact Us",
+                    modal: "Service Prices",
+                    nav: ["Home", "Services", "Contact"],
+                    titles: ["Photography", "Video Production", "Interview Hosting", "Music Recording & Mixing"]
+                }
+            };
+
+            const t = texts[lang];
+            document.getElementById('hero-text').textContent = t.hero;
+            document.getElementById('view-services-btn').textContent = t.btn;
+            document.getElementById('services-title').textContent = t.services;
+            document.getElementById('contact-title').textContent = t.contact;
+            document.getElementById('modal-title').textContent = t.modal;
+
+            document.querySelectorAll('.nav-link').forEach((el, i) => {
+                el.textContent = t.nav[i];
+            });
+
+            document.querySelectorAll('.service-info h3').forEach((el, i) => {
+                el.textContent = t.titles[i];
+            });
+        }
+
+        // Show Login Modal
+        function showLoginModal() {
+            document.getElementById('loginModal').style.display = 'flex';
+        }
+
+        // Hide Login Modal
+        function hideLoginModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+
+        // Login Function (Fictional - In real site, connect to backend)
+        function login() {
+            alert('Asante kwa kuingia! Sasa unaweza kuaccess akaunti yako. (Hii ni demo - weka backend halisi kwa production)');
+            hideLoginModal();
+        }
+
+        // Extra Functionality: Console Log for Debugging (Remove in Production)
+        console.log('DigArts Studio Website Loaded - Ready for Use!');
+
+        // Google Analytics Stub (Weaka code yako halisi baadaye)
+        // <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR-ID"></script>
+        // window.dataLayer = window.dataLayer || [];
+        // function gtag(){dataLayer.push(arguments);}
+        // gtag('js', new Date());
+        // gtag('config', 'YOUR-ID');
+    </script>
+</body>
+</html>
